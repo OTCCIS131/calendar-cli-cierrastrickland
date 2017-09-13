@@ -1,0 +1,25 @@
+{
+  "name": "calendar-cli-cierrastrickland",
+  "version": "1.0.0",
+  "description": "\"calander\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OTCCIS131/calendar-cli-cierrastrickland.git"
+  },
+  "author": "Cierra Strickland <cs0856663@otc.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OTCCIS131/calendar-cli-cierrastrickland/issues"
+  },
+  "homepage": "https://github.com/OTCCIS131/calendar-cli-cierrastrickland#readme",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "moment-range": "^3.0.3"
+  }
+}
