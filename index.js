@@ -9,26 +9,37 @@ let year = moment().range('year')
 
 _.forEach(Array.from(year.by('months')), month =>{
         console.log(_.pad(month.format("MMMM"), 26, ' '))
-        console.log('S   M   T   W   Th  F   S   ')
+        console.log('S   M   T   W   Th  F   S ')
 
         
         let monthRange = month.range('month')
         let firstDay = monthRange.start.day()
     
-        console.log(firstDay)
+        // console.log(firstDay)
 
-        let days = Array.from(month.range('month').by('days'))
-        let paddedDays = _.map(days, day =>{
-            let date = day.date()
-            if (day.month() == 8 && day.date() == 10){
-                date = chalk.red(date)
-            }
-            if (day.month() == 10 && day.date() == 11){
-                date = chalk.cyan(date)
-            }
-            _.unshift(firstDay.day())
-            
-            return _.padEnd(date, 2, ' ')
-        })
-        console.log(paddedDays)
-})
+        let days = Array.from(monthRange.by('days'))
+
+        _.chain(days)
+            .map(day => {
+                let date = day.format('DD')
+                if(day.month() == 8 && day.date()== 10){
+                    date = chalk.magenta(date)
+                }
+                if(day.month() == 11 && day.date() == 11){
+                    date = chalk.magenta(date)
+                }
+                return date
+            })
+
+            .tap(days => {
+                for(let i = 0; i < firstDay; i++)
+                    days.unshift('  ')
+            })
+            .chunk(7)
+
+            .each(week => {
+                console.log(_.join(week, '  '))
+            })
+            .value()
+            console.log('')
+            })
