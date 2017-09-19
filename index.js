@@ -25,7 +25,7 @@ _.forEach(Array.from(year.by('months')), month =>{
                 if(day.month() == 8 && day.date()== 10){
                     date = chalk.magenta(date)
                 }
-                if(day.month() == 11 && day.date() == 11){
+                if(day.month() == 10 && day.date() == 11){
                     date = chalk.magenta(date)
                 }
                 return date
